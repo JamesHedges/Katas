@@ -1,0 +1,12 @@
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\Order.Repository.deps.json
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\Order.Repository.dll
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\Order.Repository.pdb
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\obj\Debug\netstandard2.0\Order.Repository.csproj.CoreCompileInputs.cache
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\obj\Debug\netstandard2.0\Order.Repository.AssemblyInfo.cs
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\obj\Debug\netstandard2.0\Order.Repository.dll
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\obj\Debug\netstandard2.0\Order.Repository.pdb
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\obj\Debug\netstandard2.0\Order.Repository.csprojResolveAssemblyReference.cache
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\DDD.Shared.dll
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\Order.dll
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\DDD.Shared.pdb
+C:\Projects\Katas\FunBooksAndVideos\Order.Repository\bin\Debug\netstandard2.0\Order.pdb

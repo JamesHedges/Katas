@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FunBooksAndVideo.Order.Repository</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Shared\DDD.Shared.csproj" />
+    <ProjectReference Include="..\Order\Order.csproj" />
+  </ItemGroup>
+
+</Project>
