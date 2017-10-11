@@ -43,7 +43,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
@@ -59,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PurchaseOrderProcessorTests.cs" />
     <Compile Include="PurchaseOrderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,9 +69,17 @@
     <Analyzer Include="..\..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Membership\Membership.csproj">
+      <Project>{706e8e01-2461-45e9-bbcb-ba8d7e62b2b2}</Project>
+      <Name>Membership</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Order\Order.csproj">
       <Project>{4ae456a9-55f0-442c-8a20-696c45274cc4}</Project>
       <Name>Order</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shipping\Shipping.csproj">
+      <Project>{dd993c67-bddc-48cf-89cb-7bea14f1e68f}</Project>
+      <Name>Shipping</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

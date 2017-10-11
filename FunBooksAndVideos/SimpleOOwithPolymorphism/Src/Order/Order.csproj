@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Membership\Membership.csproj" />
+    <ProjectReference Include="..\Shipping\Shipping.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -115,3 +115,7 @@ C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\obj
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\obj\Debug\Order.Tests.csproj.CoreCompileInputs.cache
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\obj\Debug\Order.Tests.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\obj\Debug\Order.Tests.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Membership.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Membership.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Shipping.pdb

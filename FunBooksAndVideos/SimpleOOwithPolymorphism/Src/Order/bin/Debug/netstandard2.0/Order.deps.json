@@ -9,7 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "Order/1.0.0": {
         "dependencies": {
-          "NETStandard.Library": "2.0.0-preview1-25301-01"
+          "Membership": "1.0.0",
+          "NETStandard.Library": "2.0.0-preview1-25301-01",
+          "Shipping": "1.0.0"
         },
         "runtime": {
           "Order.dll": {}
@@ -21,6 +23,16 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.Packaging.Tools": "1.0.0-preview1-25301-01"
+        }
+      },
+      "Membership/1.0.0": {
+        "runtime": {
+          "Membership.dll": {}
+        }
+      },
+      "Shipping/1.0.0": {
+        "runtime": {
+          "Shipping.dll": {}
         }
       }
     }
@@ -51,6 +63,16 @@
       "sha512": "sha512-IXMGJT4mluHV5KZIjBonKsmU1sqOzq/4PYSYtgHF4rfdV7s5hNMr0DxlnFN+XK2u+Ph5F+nNkeeLpR5LbOBu7Q==",
       "path": "netstandard.library/2.0.0-preview1-25301-01",
       "hashPath": "netstandard.library.2.0.0-preview1-25301-01.nupkg.sha512"
+    },
+    "Membership/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Shipping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

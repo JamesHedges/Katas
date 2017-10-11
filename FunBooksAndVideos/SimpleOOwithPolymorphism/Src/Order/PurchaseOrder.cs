@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Membership;
+using Shipping;
+using System;
 using System.Collections.Generic;
+using Order.Processor;
 
 namespace Order
 {
-    public class PurchaseOrder
+    public class PurchaseOrder : IPurchaseOrder
     {
         private static int _LastId;
+        private readonly IPurchaseOrderProcessor _OrderProcessor;
 
         static PurchaseOrder()
         {
@@ -13,19 +17,20 @@ namespace Order
             _LastId = random.Next(0, 4999999);
         }
 
-        private PurchaseOrder()
+        private PurchaseOrder(IPurchaseOrderProcessor orderProcessor)
         {
+            _OrderProcessor = orderProcessor;
             Id = NextId();
         }
 
         public int Id { get; }
         public decimal Total { get; private set; }
         public int CustomerId { get; private set; }
-        public IEnumerable<ItemLine> ItemLines { get; private set; }
+        public IEnumerable<IItemLine> ItemLines { get; private set; }
 
-        public static PurchaseOrder Create(decimal total, int customerId, IEnumerable<ItemLine> itemLines)
+        public static PurchaseOrder Create(IPurchaseOrderProcessor orderProcessor, decimal total, int customerId, IEnumerable<IItemLine> itemLines)
         {
-            PurchaseOrder po = new PurchaseOrder
+            PurchaseOrder po = new PurchaseOrder(orderProcessor)
             {
                 Total = total,
                 CustomerId = customerId,
@@ -35,22 +40,14 @@ namespace Order
             return po;
         }
 
+        public void Accept()
+        {
+            _OrderProcessor.HandlePurchaseOrder(this);
+        }
+
         private static int NextId()
         {
             return ++_LastId;
         }
-    }
-
-    public class ItemLine
-    {
-        public string Description { get; set; }
-        public ItemLineType Type { get; set; }
-    }
-
-    public enum ItemLineType
-    {
-        Video,
-        Book,
-        BookClub
     }
 }

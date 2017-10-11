@@ -6,3 +6,7 @@ C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.AssemblyInfo.cs
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Membership.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Membership.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Shipping.pdb
