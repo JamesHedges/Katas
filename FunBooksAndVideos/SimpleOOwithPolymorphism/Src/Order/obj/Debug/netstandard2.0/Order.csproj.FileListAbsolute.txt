@@ -1,0 +1,8 @@
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Order.deps.json
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Order.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\bin\Debug\netstandard2.0\Order.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.csprojResolveAssemblyReference.cache
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.csproj.CoreCompileInputs.cache
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.AssemblyInfo.cs
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order\obj\Debug\netstandard2.0\Order.pdb
