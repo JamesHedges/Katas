@@ -1,6 +1,6 @@
 ﻿namespace Order.Processor
 {
-    public interface IItemProcessorFactory
+    public interface IItemProcessorBuilder
     {
         IItemProcessor GetItemProcessor(ItemLineType itemLineType);
     }

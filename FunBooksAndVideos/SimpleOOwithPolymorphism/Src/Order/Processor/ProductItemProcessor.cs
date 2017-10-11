@@ -1,4 +1,5 @@
 ﻿using Shipping;
+using System;
 
 namespace Order.Processor
 {
@@ -13,6 +14,10 @@ namespace Order.Processor
 
         public void HandlePurchaseOrderItem(int customerId, IItemLine item)
         {
+            if (item.Type != ItemLineType.Product)
+            {
+                throw new Exception("Item must be ItemLineType.Product");
+            }
             _ShippingService.GenerateShippingLabel(customerId, item.Description);
         }
     }

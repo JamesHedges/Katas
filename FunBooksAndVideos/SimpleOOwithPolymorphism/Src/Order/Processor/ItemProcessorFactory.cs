@@ -4,12 +4,12 @@ using Membership;
 
 namespace Order.Processor
 {
-    public class ItemProcessorFactory : IItemProcessorFactory
+    public class ItemProcessorBuilder : IItemProcessorBuilder
     {
         private readonly IShippingService _ShippingService;
         private readonly IMembershipService _MembershipService;
 
-        public ItemProcessorFactory()
+        public ItemProcessorBuilder()
         {
             _ShippingService = new ShippingService();
             _MembershipService = new MembershipService();

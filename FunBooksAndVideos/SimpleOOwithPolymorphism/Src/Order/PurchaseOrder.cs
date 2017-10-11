@@ -40,6 +40,7 @@ namespace Order
             return po;
         }
 
+        // When a purchase order is accepted, then process it.
         public void Accept()
         {
             _OrderProcessor.HandlePurchaseOrder(this);

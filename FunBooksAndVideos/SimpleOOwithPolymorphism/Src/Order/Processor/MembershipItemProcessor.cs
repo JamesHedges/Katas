@@ -1,4 +1,5 @@
-﻿using Membership;
+﻿using System;
+using Membership;
 
 namespace Order.Processor
 {
@@ -13,6 +14,10 @@ namespace Order.Processor
 
         public void HandlePurchaseOrderItem(int customerId, IItemLine item)
         {
+            if (item.Type != ItemLineType.Membership)
+            {
+                throw new Exception("Item must be ItemLineType.Membership");
+            }
             _MembershipService.ActivateMembership(customerId, item.Description);
         }
     }

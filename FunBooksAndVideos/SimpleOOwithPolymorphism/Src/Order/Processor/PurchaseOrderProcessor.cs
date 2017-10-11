@@ -2,9 +2,9 @@
 {
     public class PurchaseOrderProcessor : IPurchaseOrderProcessor
     {
-        private readonly IItemProcessorFactory _ItemProcessorFactory;
+        private readonly IItemProcessorBuilder _ItemProcessorFactory;
 
-        public PurchaseOrderProcessor(IItemProcessorFactory itemProcessorFactory)
+        public PurchaseOrderProcessor(IItemProcessorBuilder itemProcessorFactory)
         {
             _ItemProcessorFactory = itemProcessorFactory;
         }

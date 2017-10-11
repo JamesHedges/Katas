@@ -58,9 +58,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemProcessorBuilderTests.cs" />
+    <Compile Include="MembershipItemProcessorTests.cs" />
+    <Compile Include="ProductItemProcessorTests.cs" />
     <Compile Include="PurchaseOrderProcessorTests.cs" />
     <Compile Include="PurchaseOrderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpyMembershipService.cs" />
+    <Compile Include="SpyShippingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

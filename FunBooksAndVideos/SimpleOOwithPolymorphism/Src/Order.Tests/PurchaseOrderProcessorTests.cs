@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using Shouldly;
-using Order;
 using Order.Processor;
 
 namespace Order.Tests
@@ -25,7 +21,7 @@ namespace Order.Tests
             };
 
 
-            FakeItemProcessorFactory itemProcessorFactory = new FakeItemProcessorFactory();
+            FakeItemProcessorBuilder itemProcessorFactory = new FakeItemProcessorBuilder();
             IPurchaseOrderProcessor orderProcessor = new PurchaseOrderProcessor(itemProcessorFactory);
             PurchaseOrder po = PurchaseOrder.Create(orderProcessor, total, customerId, itemLines);
 
@@ -35,11 +31,11 @@ namespace Order.Tests
         }
     }
 
-    public class FakeItemProcessorFactory : IItemProcessorFactory
+    public class FakeItemProcessorBuilder : IItemProcessorBuilder
     {
         private readonly List<IItemLine> _ProcessedItems;
 
-        public FakeItemProcessorFactory()
+        public FakeItemProcessorBuilder()
         {
             _ProcessedItems = new List<IItemLine>();
         }
