@@ -1,0 +1,15 @@
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\bin\Debug\netstandard2.0\Shipping.deps.json
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\bin\Debug\netstandard2.0\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\bin\Debug\netstandard2.0\Shipping.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\obj\Debug\netstandard2.0\Shipping.csproj.CoreCompileInputs.cache
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\obj\Debug\netstandard2.0\Shipping.AssemblyInfo.cs
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\obj\Debug\netstandard2.0\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Shipping\obj\Debug\netstandard2.0\Shipping.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\bin\Debug\netstandard2.0\Shipping.deps.json
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\bin\Debug\netstandard2.0\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\bin\Debug\netstandard2.0\Shipping.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\obj\Debug\netstandard2.0\Shipping.csprojResolveAssemblyReference.cache
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\obj\Debug\netstandard2.0\Shipping.csproj.CoreCompileInputs.cache
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\obj\Debug\netstandard2.0\Shipping.AssemblyInfo.cs
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\obj\Debug\netstandard2.0\Shipping.dll
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Shipping\obj\Debug\netstandard2.0\Shipping.pdb

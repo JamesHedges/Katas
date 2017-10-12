@@ -1,8 +1,0 @@
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\bin\Debug\netstandard2.0\Membership.deps.json
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\bin\Debug\netstandard2.0\Membership.dll
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\bin\Debug\netstandard2.0\Membership.pdb
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\obj\Debug\netstandard2.0\Membership.csprojResolveAssemblyReference.cache
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\obj\Debug\netstandard2.0\Membership.csproj.CoreCompileInputs.cache
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\obj\Debug\netstandard2.0\Membership.AssemblyInfo.cs
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\obj\Debug\netstandard2.0\Membership.dll
-C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Membership\obj\Debug\netstandard2.0\Membership.pdb
