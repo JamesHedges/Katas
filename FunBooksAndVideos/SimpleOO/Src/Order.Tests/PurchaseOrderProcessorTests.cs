@@ -23,7 +23,7 @@ namespace Order.Tests
 
             FakeItemProcessorBuilder itemProcessorFactory = new FakeItemProcessorBuilder();
             IPurchaseOrderProcessor orderProcessor = new PurchaseOrderProcessor(itemProcessorFactory);
-            PurchaseOrder po = PurchaseOrder.Create(orderProcessor, total, customerId, itemLines);
+            IPurchaseOrder po = PurchaseOrder.Create(orderProcessor, total, customerId, itemLines);
 
             orderProcessor.HandlePurchaseOrder(po);
 

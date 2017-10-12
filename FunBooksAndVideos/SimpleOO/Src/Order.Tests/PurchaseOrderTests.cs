@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using Shouldly;
 using Order.Processor;
-using Membership;
-using Shipping;
 
 namespace Order.Tests
 {
@@ -24,13 +21,26 @@ namespace Order.Tests
                 new ItemLine { Description = "Book Club Membership", Type = ItemLineType.Membership }
             };
 
-            PurchaseOrder po = PurchaseOrder.Create(poProcessor, total, customerId, itemLines);
+            IPurchaseOrder po = PurchaseOrder.Create(poProcessor, total, customerId, itemLines);
 
             po.ShouldNotBeNull();
             po.Id.ShouldBeGreaterThan(0);
             po.CustomerId.ShouldBe(customerId);
             po.Total.ShouldBe(total);
             po.ItemLines.Count().ShouldBe(itemLines.Count());
+        }
+
+        [Fact]
+        public void CreateMultiplePurchaseOrdersHaveUniqueIds()
+        {
+            IPurchaseOrderProcessor orderProcessor = new FakePurchaseOrderProcessor();
+            IPurchaseOrder firstOrder;
+            IPurchaseOrder secondOrder;
+
+            firstOrder = PurchaseOrder.Create(orderProcessor, 100m, 1234567, new List<ItemLine> { new ItemLine { Description = "Item1", Type = ItemLineType.Product } });
+            secondOrder = PurchaseOrder.Create(orderProcessor, 200m, 4567890, new List<ItemLine> { new ItemLine { Description = "Item2", Type = ItemLineType.Membership } });
+
+            firstOrder.Id.ShouldNotBe(secondOrder.Id);
         }
 
         [Fact]
@@ -44,46 +54,10 @@ namespace Order.Tests
                 new ItemLine { Description = "Book Club Membership", Type = ItemLineType.Membership }
             };
 
-            PurchaseOrder po = PurchaseOrder.Create(orderProcessor, total, customerId, itemLines);
+            IPurchaseOrder po = PurchaseOrder.Create(orderProcessor, total, customerId, itemLines);
             po.Accept();
 
             orderProcessor.ProcessedOrders.Any(pId => pId == po.Id).ShouldBeTrue();
-        }
-    }
-
-    public class FakePurchaseOrderProcessor : IPurchaseOrderProcessor
-    {
-        private readonly List<int> _ProcessedOrders;
-
-        public FakePurchaseOrderProcessor()
-        {
-            _ProcessedOrders = new List<int>();
-        }
-
-        public IEnumerable<int> ProcessedOrders => _ProcessedOrders;
-
-        public void HandlePurchaseOrder(IPurchaseOrder purchaseOrder)
-        {
-            if (!_ProcessedOrders.Any(pId => pId == purchaseOrder.Id))
-            {
-                _ProcessedOrders.Add(purchaseOrder.Id);
-            }
-        }
-    }
-
-    public class FakeShippingService : IShippingService
-    {
-        public void GenerateShippingLabel(int customerId, string itemLine)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class FakeMembershipService : IMembershipService
-    {
-        public void ActivateMembership(int customerId, string itemLine)
-        {
-            throw new NotImplementedException();
         }
     }
 }

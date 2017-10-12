@@ -17,18 +17,21 @@ namespace Order.Processor
 
         public IItemProcessor GetItemProcessor(ItemLineType itemLineType)
         {
+            IItemProcessor itemProcessor = null;;
+
             switch (itemLineType)
             {
                 case ItemLineType.Product:
-                    return GetProductItemProcessor();
+                    itemProcessor = GetProductItemProcessor();
                     break;
                 case ItemLineType.Membership:
-                    return GetMembershipItemProcessor();
+                    itemProcessor = GetMembershipItemProcessor();
                     break;
                 default:
                     throw new Exception("Invalid Line Item Type. Could not get item processor");
                     break;
             }
+            return itemProcessor;
         }
 
         private IItemProcessor GetMembershipItemProcessor()

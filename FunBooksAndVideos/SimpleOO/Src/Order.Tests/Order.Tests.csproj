@@ -58,6 +58,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeMembershipService.cs" />
+    <Compile Include="FakePurchaseOrderProcessor.cs" />
+    <Compile Include="FakeShippingService.cs" />
     <Compile Include="ItemProcessorBuilderTests.cs" />
     <Compile Include="MembershipItemProcessorTests.cs" />
     <Compile Include="ProductItemProcessorTests.cs" />

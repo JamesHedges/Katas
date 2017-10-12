@@ -10,6 +10,7 @@ namespace Order
     {
         private static int _LastId;
         private readonly IPurchaseOrderProcessor _OrderProcessor;
+        private PurchaseOrderStatus _PurchaseOrderStatus;
 
         static PurchaseOrder()
         {
@@ -21,6 +22,7 @@ namespace Order
         {
             _OrderProcessor = orderProcessor;
             Id = NextId();
+            _PurchaseOrderStatus = PurchaseOrderStatus.Created;
         }
 
         public int Id { get; }
@@ -28,7 +30,8 @@ namespace Order
         public int CustomerId { get; private set; }
         public IEnumerable<IItemLine> ItemLines { get; private set; }
 
-        public static PurchaseOrder Create(IPurchaseOrderProcessor orderProcessor, decimal total, int customerId, IEnumerable<IItemLine> itemLines)
+
+        public static IPurchaseOrder Create(IPurchaseOrderProcessor orderProcessor, decimal total, int customerId, IEnumerable<IItemLine> itemLines)
         {
             PurchaseOrder po = new PurchaseOrder(orderProcessor)
             {
@@ -43,12 +46,25 @@ namespace Order
         // When a purchase order is accepted, then process it.
         public void Accept()
         {
-            _OrderProcessor.HandlePurchaseOrder(this);
+            if (_PurchaseOrderStatus == PurchaseOrderStatus.Created)
+            {
+                _OrderProcessor.HandlePurchaseOrder(this);
+                _PurchaseOrderStatus = PurchaseOrderStatus.Accepted;
+            }
         }
 
+        // In a production system, ID generation will
+        // generate a unique value (GUID), use a persisted last ID,
+        // or moved to a service.
         private static int NextId()
         {
             return ++_LastId;
         }
+    }
+
+    public enum PurchaseOrderStatus
+    {
+        Created,
+        Accepted
     }
 }
