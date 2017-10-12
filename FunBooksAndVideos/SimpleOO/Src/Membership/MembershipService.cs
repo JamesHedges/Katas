@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Membership
 {
@@ -6,7 +7,7 @@ namespace Membership
     {
         public void ActivateMembership(int customerId, string itemLine)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine($"Activating membership {itemLine} for customer ID: {customerId}");
         }
     }
 }

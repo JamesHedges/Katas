@@ -119,10 +119,10 @@ C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Shipping.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Membership.pdb
 C:\Projects\Katas\FunBooksAndVideos\SimpleOOwithPolymorphism\Src\Order.Tests\bin\Debug\Shipping.pdb
+C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\xunit.abstractions.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\xunit.runner.reporters.net452.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\xunit.runner.utility.net452.dll
-C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\xunit.abstractions.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\Order.Tests.dll.config
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\Order.Tests.dll
 C:\Projects\Katas\FunBooksAndVideos\SimpleOO\Src\Order.Tests\bin\Debug\Order.Tests.pdb

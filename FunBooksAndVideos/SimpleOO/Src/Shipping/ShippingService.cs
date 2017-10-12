@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Shipping
 {
@@ -12,7 +13,7 @@ namespace Shipping
     {
         public void GenerateShippingLabel(int customerId, string itemLine)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine($"Generating shipping label for customer ID: {customerId}, Item: {itemLine}");
         }
     }
 }

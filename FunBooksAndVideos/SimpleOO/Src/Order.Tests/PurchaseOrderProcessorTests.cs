@@ -9,7 +9,7 @@ namespace Order.Tests
     public class PurchaseOrderProcessorTests
     {
         [Fact]
-        public void ProcessProductPurchaseOrder()
+        public void ProcessProductPurchaseOrderProcessesEachItemLine()
         {
             decimal total = 48.5m;
             int customerId = 4567890;
@@ -28,38 +28,6 @@ namespace Order.Tests
             orderProcessor.HandlePurchaseOrder(po);
 
             itemProcessorFactory.ProcessedItems.Count().ShouldBe(itemLines.Count());
-        }
-    }
-
-    public class FakeItemProcessorBuilder : IItemProcessorBuilder
-    {
-        private readonly List<IItemLine> _ProcessedItems;
-
-        public FakeItemProcessorBuilder()
-        {
-            _ProcessedItems = new List<IItemLine>();
-        }
-
-        public IEnumerable<IItemLine> ProcessedItems => _ProcessedItems;
-
-        public IItemProcessor GetItemProcessor(ItemLineType itemLineType)
-        {
-            return new SpyItemProcessor(_ProcessedItems);
-        }
-    }
-
-    public class SpyItemProcessor : IItemProcessor
-    {
-        private readonly List<IItemLine> _ItemsProcessed;
-
-        public SpyItemProcessor(List<IItemLine> itemsProcessed)
-        {
-            _ItemsProcessed = itemsProcessed;
-        }
-
-        public void HandlePurchaseOrderItem(int customerId, IItemLine item)
-        {
-            _ItemsProcessed.Add(item);
         }
     }
 }
