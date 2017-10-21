@@ -3,7 +3,7 @@ using OrderService.Core.Messages;
 
 namespace OrderProcessorService.Items
 {
-    public class FirstAidVideoProcessor : ProductItemProcessor
+    public class FirstAidVideoProcessor : ProductItemProcessorService
     {
         public FirstAidVideoProcessor(IMediator mediator)
             : base (mediator)

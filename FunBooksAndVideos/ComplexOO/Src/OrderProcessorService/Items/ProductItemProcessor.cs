@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OrderProcessorService.Items
 {
-    public class ProductItemProcessor : IAsyncNotificationHandler<AcceptingPurchaseOrderItemLine>
+    public class ProductItemProcessorService : IAsyncNotificationHandler<AcceptingPurchaseOrderItemLine>
     {
         private readonly IMediator _Mediator;
 
-        public ProductItemProcessor(IMediator mediator)
+        public ProductItemProcessorService(IMediator mediator)
         {
             _Mediator = mediator;
         }

@@ -2,25 +2,30 @@
 using MediatR;
 using OrderService.Core.Messages;
 using OrderService.Core;
+using System.Threading.Tasks;
 
 namespace OrderProcessorService.Items
 {
-    public class MembershipItemProcessor : IItemProcessor
+    public class MembershipItemProcessorService : IAsyncNotificationHandler<AcceptingPurchaseOrderItemLine>
     {
         private readonly IMediator _Mediator;
 
-        public MembershipItemProcessor(IMediator mediator)
+        public MembershipItemProcessorService(IMediator mediator)
         {
             _Mediator = mediator;
         }
 
-        public void HandlePurchaseOrderItem(int customerId, ItemLineRequest item)
+        public async Task Handle(AcceptingPurchaseOrderItemLine notification)
         {
-            if (item.Type != ItemLineType.Membership)
+            if (notification.Item.Type == ItemLineType.Membership)
             {
-                throw new Exception("Item must be ItemLineType.Membership");
+                ActivateMembership request = new ActivateMembership
+                {
+                    CustomerId = notification.CustomerId,
+                    Item = notification.Item
+                };
+                var response = await _Mediator.Send(request);
             }
-            _Mediator.Send( new ActivateMembership { CustomerId = customerId, Item = item });
         }
     }
 
