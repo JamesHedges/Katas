@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mediatr" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DDDBase\Src\DDD.Core\DDD.Core.csproj" />
+    <ProjectReference Include="..\OrderService.Core\OrderService.Core.csproj" />
+  </ItemGroup>
+
+</Project>
