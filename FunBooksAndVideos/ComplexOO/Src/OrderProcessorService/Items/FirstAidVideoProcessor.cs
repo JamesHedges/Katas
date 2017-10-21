@@ -11,9 +11,9 @@ namespace OrderProcessorService.Items
 
         }
 
-        public override void HandlePurchaseOrderItem(int customerId, ItemLineRequest item)
-        {
-            base.HandlePurchaseOrderItem(customerId, item);
-        }
+        //public override void HandlePurchaseOrderItem(int customerId, ItemLineRequest item)
+        //{
+        //    base.HandlePurchaseOrderItem(customerId, item);
+        //}
     }
 }

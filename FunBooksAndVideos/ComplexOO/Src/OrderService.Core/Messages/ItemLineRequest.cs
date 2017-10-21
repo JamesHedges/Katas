@@ -1,4 +1,4 @@
-﻿using Order.Services.Core;
+﻿using OrderService.Core;
 
 namespace OrderService.Core.Messages
 {

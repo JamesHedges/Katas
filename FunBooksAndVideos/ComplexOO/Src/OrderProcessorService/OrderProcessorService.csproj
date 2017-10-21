@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Items\IItemProcessorFactory.cs" />
+    <Compile Remove="Items\ItemProcessorFactory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="3.0.1" />
   </ItemGroup>
 

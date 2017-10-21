@@ -15,4 +15,11 @@ namespace OrderService.Core.Messages
     {
         public bool Accepted { get; set; }
     }
+
+    public class AcceptingPurchaseOrderItemLine : INotification
+    {
+        public int CustomerId { get; set; }
+        public int PurchaseOrderId { get; set; }
+        public ItemLineRequest Item { get; set; }
+    }
 }

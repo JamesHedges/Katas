@@ -2,10 +2,11 @@
 using OrderService.Core.Messages;
 using MediatR;
 using OrderService.Core;
+using System.Threading.Tasks;
 
 namespace OrderProcessorService.Items
 {
-    public class ProductItemProcessor : IItemProcessor
+    public class ProductItemProcessor : IAsyncNotificationHandler<AcceptingPurchaseOrderItemLine>
     {
         private readonly IMediator _Mediator;
 
@@ -14,13 +15,17 @@ namespace OrderProcessorService.Items
             _Mediator = mediator;
         }
 
-        public virtual void HandlePurchaseOrderItem(int customerId, ItemLineRequest item)
+        public async Task Handle(AcceptingPurchaseOrderItemLine notification)
         {
-            if (item.Type != ItemLineType.Product)
+            if (notification.Item.Type == ItemLineType.Product)
             {
-                throw new Exception("Item must be ItemLineType.Product");
+                GenerateShippingLabel request = new GenerateShippingLabel
+                {
+                    CustomerId = notification.CustomerId,
+                    Item = notification.Item
+                };
+                var response = await _Mediator.Send(request);
             }
-            _Mediator.Send( new GenerateShippingLabel { CustomerId = customerId, Item = item });
         }
     }
 
