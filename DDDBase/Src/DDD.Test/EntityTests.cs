@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 using Shouldly;
-using DDD.Shared.Domain;
+using DDD.Core.Domain;
 
 namespace DDD.Test
 {

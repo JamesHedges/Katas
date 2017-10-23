@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DDD.Shared.Domain
+namespace DDD.Core.Domain
 {
     public interface IEntity<TIdType> : IEquatable<Entity<TIdType>>
     {

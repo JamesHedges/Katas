@@ -10,16 +10,18 @@ using Moq;
 using MediatR;
 using OrderService.Core;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace OrderProcessorService.Tests
 {
     public class OrderProcessorTests
     {
         [Fact]
-        public void OrderProcessorHandlesAcceptPurchaseOrder()
+        public async Task OrderProcessorHandlesAcceptPurchaseOrder()
         {
             var mockMediator = new Mock<IMediator>();
             mockMediator.Setup(m => m.Publish(It.IsAny<AcceptingPurchaseOrderItemLine>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Verifiable("Called for each item line");
 
             AcceptPurchaseOrder command = new AcceptPurchaseOrder
@@ -35,9 +37,9 @@ namespace OrderProcessorService.Tests
             };
             AcceptedPurchaseOrder reply;
 
-            OrderProcessor sut = new OrderProcessor(mockMediator.Object);
+            OrderProcessorService sut = new OrderProcessorService(mockMediator.Object);
 
-            reply = sut.Handle(command);
+            reply = await sut.Handle(command);
 
             reply.Accepted.ShouldBeTrue();
             mockMediator.Verify(m => m.Publish(It.IsAny<AcceptingPurchaseOrderItemLine>(), It.IsAny<CancellationToken>()), Times.Exactly(command.Items.Count()));

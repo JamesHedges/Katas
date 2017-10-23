@@ -11,15 +11,26 @@ namespace OrderService.Core.Messages
         public IEnumerable<ItemLineRequest> Items { get; set; }
     }
 
-    public class AcceptedPurchaseOrder
+    public class AcceptedPurchaseOrder : INotification
     {
         public bool Accepted { get; set; }
     }
 
-    public class AcceptingPurchaseOrderItemLine : INotification
+    public class ProcessedPurchaseOrder : INotification
     {
         public int CustomerId { get; set; }
         public int PurchaseOrderId { get; set; }
-        public ItemLineRequest Item { get; set; }
+        public IEnumerable<ItemLineRequest> Items { get; set; }
+    }
+
+    public class AwardCustomerPoints : IRequest<AwardedCustomerPoints>
+    {
+        public int CustomerId { get; set; }
+        public int Points { get; set; }
+    }
+
+    public class AwardedCustomerPoints
+    {
+        public bool AwardedPoints { get; set; }
     }
 }

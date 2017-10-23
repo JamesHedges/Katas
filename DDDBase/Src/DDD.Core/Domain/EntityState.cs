@@ -1,4 +1,4 @@
-﻿namespace DDD.Shared.Domain
+﻿namespace DDD.Core.Domain
 {
     public enum EntityState
     {

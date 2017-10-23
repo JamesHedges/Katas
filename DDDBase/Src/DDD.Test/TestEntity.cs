@@ -1,5 +1,5 @@
 ﻿using System;
-using DDD.Shared.Domain;
+using DDD.Core.Domain;
 
 namespace DDD.Test
 {

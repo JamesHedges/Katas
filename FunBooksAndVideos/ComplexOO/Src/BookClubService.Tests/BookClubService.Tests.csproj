@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}</ProjectGuid>
+    <ProjectGuid>{0387750A-94D8-49F5-8EAF-42D3AE56A091}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrderProcessorService.Tests</RootNamespace>
-    <AssemblyName>OrderProcessorService.Tests</AssemblyName>
+    <RootNamespace>BookClubService.Tests</RootNamespace>
+    <AssemblyName>BookClubService.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -69,10 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FirstAidVideoProcessorTests.cs" />
-    <Compile Include="MembershipItemProcessorTests.cs" />
-    <Compile Include="OrderProcessorTests.cs" />
-    <Compile Include="ProductItemProcessorTests.cs" />
+    <Compile Include="BookClubPointsServiceTests.cs" />
+    <Compile Include="BookClubServiceTests.cs" />
+    <Compile Include="FakeBookClubMembershipRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,19 +85,22 @@
       <Project>{421932ee-dbb5-46eb-8261-1694a2231702}</Project>
       <Name>DDD.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OrderProcessorService\OrderProcessorService.csproj">
-      <Project>{d9cadff5-82e1-4709-8530-f2b6bdd1f2a3}</Project>
-      <Name>OrderProcessorService</Name>
+    <ProjectReference Include="..\BookClubService\BookClubService.csproj">
+      <Project>{3bec505b-7b3a-424e-af8f-a7ac31445948}</Project>
+      <Name>BookClubService</Name>
     </ProjectReference>
     <ProjectReference Include="..\OrderService.Core\OrderService.Core.csproj">
       <Project>{44d0e0ee-1367-4249-9474-46293203c10a}</Project>
       <Name>OrderService.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OrderService\OrderService.csproj">
+      <Project>{bab886d4-91f5-4fa9-9cdd-f9715433ffc5}</Project>
+      <Name>OrderService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

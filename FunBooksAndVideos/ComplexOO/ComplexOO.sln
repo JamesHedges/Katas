@@ -11,11 +11,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "Src\OrderSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Tests", "Src\OrderService.Tests\OrderService.Tests.csproj", "{2DB90B9C-5F77-46AB-805D-EF6BC7AA6E05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Core", "Src\OrderService.Core\OrderService.Core.csproj", "{44D0E0EE-1367-4249-9474-46293203C10A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Core", "Src\OrderService.Core\OrderService.Core.csproj", "{44D0E0EE-1367-4249-9474-46293203C10A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessorService", "Src\OrderProcessorService\OrderProcessorService.csproj", "{D9CADFF5-82E1-4709-8530-F2B6BDD1F2A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessorService", "Src\OrderProcessorService\OrderProcessorService.csproj", "{D9CADFF5-82E1-4709-8530-F2B6BDD1F2A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessorService.Tests", "Src\OrderProcessorService.Tests\OrderProcessorService.Tests.csproj", "{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC51E51F-7013-452E-A60D-900DC603E7D2}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClubService.Tests", "Src\BookClubService.Tests\BookClubService.Tests.csproj", "{0387750A-94D8-49F5-8EAF-42D3AE56A091}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClubService", "Src\BookClubService\BookClubService.csproj", "{3BEC505B-7B3A-424E-AF8F-A7AC31445948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +60,14 @@ Global
 		{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0387750A-94D8-49F5-8EAF-42D3AE56A091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0387750A-94D8-49F5-8EAF-42D3AE56A091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0387750A-94D8-49F5-8EAF-42D3AE56A091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0387750A-94D8-49F5-8EAF-42D3AE56A091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

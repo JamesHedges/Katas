@@ -1,6 +1,7 @@
-﻿using DDD.Shared.Domain;
+﻿using DDD.Core.Domain;
 using System;
 using System.Collections.Generic;
+using OrderService.Core;
 
 namespace OrderService
 {

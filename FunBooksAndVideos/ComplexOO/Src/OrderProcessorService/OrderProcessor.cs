@@ -1,19 +1,20 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MediatR;
 using OrderService.Core.Messages;
 
 namespace OrderProcessorService
 {
-    public class OrderProcessor : IRequestHandler<AcceptPurchaseOrder, AcceptedPurchaseOrder>
+    public class OrderProcessorService : IAsyncRequestHandler<AcceptPurchaseOrder, AcceptedPurchaseOrder>
     {
         private readonly IMediator _Mediator;
 
-        public OrderProcessor(IMediator mediator)
+        public OrderProcessorService(IMediator mediator)
         {
             _Mediator = mediator;
         }
 
-        public AcceptedPurchaseOrder Handle(AcceptPurchaseOrder message)
+        public async Task<AcceptedPurchaseOrder> Handle(AcceptPurchaseOrder message)
         {
             foreach(var item in message.Items)
             {
@@ -23,7 +24,7 @@ namespace OrderProcessorService
                     PurchaseOrderId = message.PurchaseOrderId,
                     Item = item
                 };
-                _Mediator.Publish(itemEvent);
+                await _Mediator.Publish(itemEvent);
             }
             return new AcceptedPurchaseOrder { Accepted = true };
         }

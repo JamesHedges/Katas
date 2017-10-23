@@ -51,21 +51,25 @@ The order processing service with handle AcceptPurchaseOrder requests. The handl
 
 >*If the purchase order contains a membership, it has to be activated in the customer account immediately.*
 
-Adding a membership processing service that handles the AcceptingPurchaseOrderItemLine notification. The handler will check for membership item line type. It if is a membership, it will send the activate request.
+Business Rule 1 will be implemented by adding a membership processing service. The service will handle the AcceptingPurchaseOrderItemLine notification. The handler will check for membership item line type. It if is a membership, it will send the activate request.
 
 #### Business Rule 2
 
 >*If the purchase order contains a physical product a shipping slip has to be generated.*
 
-When a product item line processor will handles the AcceptingPurchaseOrderItemLine notification. The handler check the item type for product. It the item is a product, a request will be sent for create a shipping label.
+Business rule 2 will be implemented by adding a product item line processor. It will also handles the AcceptingPurchaseOrderItemLine notification. The handler should check the item type for product. If the item is a product, a request will be sent to create a shipping label.
 
 #### Business Rule 3
 
 >*If the purchase order contains Comprehensive First Aid Training video then Basic First Aid training video is added to the purchase order.*
 
+Business rule 3 will be implmented by adding a First Aid Video Processing service than handles the accepting item line event and checking the requested item line for a Comprehensive First Aid Training Video. If found, the handler will send a message to add an Basic First Aid Training Video item to the purchase order. If successful, it will publish the accepting line item for the basic first aid video. Publishing the event will ensure the basic first aid video gets processed.
+
 #### Business Rule 4
 
 >*If the purchase order contains books, and the customer has book membership or bought one then 5 points are added to the customer account for each book.*
+
+Business Rule 4 will be implemented by adding a book membership points service that handles the accepted purchase order event. The purchase order processed event will be published by the purchase order processor upon successful order processing. The book club servic e purchase order processed handler will inspect the order for book and book club orders. If book order is found and the customer has or ordered a book club membership, 5 points for each book will be awarded to the customer. This will be accomplished by sending a message that the customer was awarded points. 
 
 #### Business Rule 5
 

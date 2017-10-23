@@ -5,6 +5,7 @@ using System.Linq;
 using Moq;
 using MediatR;
 using OrderService.Core.Messages;
+using OrderService.Core;
 using System.Threading.Tasks;
 using System.Threading;
 
@@ -49,12 +50,18 @@ namespace OrderService.Tests
             var mockMediator = new Mock<IMediator>();
             mockMediator.Setup(m => m.Send(It.IsAny<AcceptPurchaseOrder>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(accepted)
-                .Verifiable("");
+                .Verifiable("Sent AcceptPurchaseOrder command.");
+
+            mockMediator.Setup(m => m.Publish(It.IsAny<ProcessedPurchaseOrder>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
+                .Verifiable("Published ProcessedPurchase order notification.");
+
             PurchaseOrder sut = CreateTestPurchaseOrder(mockMediator.Object);
 
             await sut.Accept();
 
             mockMediator.Verify(m => m.Send(It.IsAny<AcceptPurchaseOrder>(), It.IsAny<CancellationToken>()), Times.Once());
+            mockMediator.Verify(m => m.Publish(It.IsAny<ProcessedPurchaseOrder>(), It.IsAny<CancellationToken>()), Times.Once);
             sut.Accepted.ShouldBeTrue();
         }
 

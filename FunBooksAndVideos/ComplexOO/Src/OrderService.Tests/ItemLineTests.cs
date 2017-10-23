@@ -1,5 +1,6 @@
 ﻿using Xunit;
 using Shouldly;
+using OrderService.Core;
 
 namespace OrderService.Tests
 {
