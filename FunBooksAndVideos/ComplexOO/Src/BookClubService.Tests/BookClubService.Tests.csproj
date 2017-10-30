@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookClubMembershipTests.cs" />
     <Compile Include="BookClubPointsServiceTests.cs" />
     <Compile Include="BookClubServiceTests.cs" />
     <Compile Include="FakeBookClubMembershipRepository.cs" />

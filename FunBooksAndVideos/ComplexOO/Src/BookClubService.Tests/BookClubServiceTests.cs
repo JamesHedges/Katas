@@ -18,7 +18,7 @@ namespace BookClubService.Tests
         [Fact]
         public void BookClubServiceActivateMembership()
         {
-            ActivateMembership activateMembership = new ActivateMembership
+            AcceptingPurchaseOrderItemLine acceptingPurchaseOrderItemLine = new AcceptingPurchaseOrderItemLine
             {
                 CustomerId = 3344656,
                 Item = new ItemLineRequest { Description = "Book Club Membership", Type = ItemLineType.Membership, Category = ItemLineCategory.Book }
@@ -33,9 +33,9 @@ namespace BookClubService.Tests
 
             var sut = new BookClubService(mockMediator.Object, bookClubMembershipRepository);
 
-            var response = sut.Handle(activateMembership);
+            sut.Handle(acceptingPurchaseOrderItemLine);
 
-            response.Activated.ShouldBeTrue();
+            bookClubMembershipRepository.Get(acceptingPurchaseOrderItemLine.CustomerId).ShouldNotBeNull();
         }
 
         private IBookClubMembershipRepository GetFakeBookClubMembershipRepository()

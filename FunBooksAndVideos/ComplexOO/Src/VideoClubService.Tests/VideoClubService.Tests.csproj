@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C0C91F3-46D3-4F3E-95D4-4C1BE4F77802}</ProjectGuid>
+    <ProjectGuid>{6EE50B58-B870-48EE-B169-C56CC7FA18A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrderProcessorService.Tests</RootNamespace>
-    <AssemblyName>OrderProcessorService.Tests</AssemblyName>
+    <RootNamespace>VideoClubService.Tests</RootNamespace>
+    <AssemblyName>VideoClubService.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -69,10 +69,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FirstAidVideoProcessorTests.cs" />
-    <Compile Include="OrderProcessorTests.cs" />
-    <Compile Include="ProductItemProcessorTests.cs" />
+    <Compile Include="FakeVideoClubMembershipRepository.cs" />
+    <Compile Include="VideoClubMembershipTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoClubPointsServiceTests.cs" />
+    <Compile Include="VideoClubServiceTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DDDBase\Src\DDD.Core\DDD.Core.csproj">
+      <Project>{421932ee-dbb5-46eb-8261-1694a2231702}</Project>
+      <Name>DDD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderService.Core\OrderService.Core.csproj">
+      <Project>{44d0e0ee-1367-4249-9474-46293203c10a}</Project>
+      <Name>OrderService.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoClubService\VideoClubService.csproj">
+      <Project>{672d532f-e5c1-409c-9054-70a40bdb5600}</Project>
+      <Name>VideoClubService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,23 +96,8 @@
     <Analyzer Include="..\..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\DDDBase\Src\DDD.Core\DDD.Core.csproj">
-      <Project>{421932ee-dbb5-46eb-8261-1694a2231702}</Project>
-      <Name>DDD.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrderProcessorService\OrderProcessorService.csproj">
-      <Project>{d9cadff5-82e1-4709-8530-f2b6bdd1f2a3}</Project>
-      <Name>OrderProcessorService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrderService.Core\OrderService.Core.csproj">
-      <Project>{44d0e0ee-1367-4249-9474-46293203c10a}</Project>
-      <Name>OrderService.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

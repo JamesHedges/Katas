@@ -26,6 +26,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClubService.Tests", "Sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClubService", "Src\BookClubService\BookClubService.csproj", "{3BEC505B-7B3A-424E-AF8F-A7AC31445948}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClubService", "Src\VideoClubService\VideoClubService.csproj", "{672D532F-E5C1-409C-9054-70A40BDB5600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClubService.Tests", "Src\VideoClubService.Tests\VideoClubService.Tests.csproj", "{6EE50B58-B870-48EE-B169-C56CC7FA18A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +72,14 @@ Global
 		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BEC505B-7B3A-424E-AF8F-A7AC31445948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672D532F-E5C1-409C-9054-70A40BDB5600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672D532F-E5C1-409C-9054-70A40BDB5600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672D532F-E5C1-409C-9054-70A40BDB5600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672D532F-E5C1-409C-9054-70A40BDB5600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE50B58-B870-48EE-B169-C56CC7FA18A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE50B58-B870-48EE-B169-C56CC7FA18A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE50B58-B870-48EE-B169-C56CC7FA18A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE50B58-B870-48EE-B169-C56CC7FA18A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

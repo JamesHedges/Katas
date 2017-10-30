@@ -1,26 +1,25 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
-using MediatR;
+﻿using Xunit;
 using Moq;
+using MediatR;
 using OrderService.Core.Messages;
 using OrderService.Core;
+using System.Threading.Tasks;
 using System.Threading;
-using System;
+using System.Collections.Generic;
 
-namespace BookClubService.Tests
+namespace VideoClubService.Tests
 {
-    public class BookClubPointsServiceTests
+    public class VideoClubPointsServiceTests
     {
         [Fact]
-        public async Task BookClubPointsServiceHandlesProcessedPurchasedOrderForExistingMembership()
+        public async Task VideoClubPointsServiceHandlesProcessedPurchasedOrderForExistingMembership()
         {
             int customerId = 344656;
             AwardedCustomerPoints awardedCustomerPoints = new AwardedCustomerPoints();
             var mockMediator = new Mock<IMediator>();
             mockMediator.Setup(m => m.Send(It.IsAny<AwardCustomerPoints>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(awardedCustomerPoints)
-                .Verifiable("Awarded book club membership points.");
+                .Verifiable("Awarded Video club membership points.");
 
             ProcessedPurchaseOrder processedPurchaseOrder = new ProcessedPurchaseOrder
             {
@@ -33,9 +32,9 @@ namespace BookClubService.Tests
                 }
             };
 
-            IBookClubMembershipRepository fakeRepo = GetFakeBookClubMembershipRepository(BookClubMembership.Create(customerId));
+            IVideoClubMembershipRepository fakeRepo = GetFakeVideoClubMembershipRepository(VideoClubMembership.Create(customerId));
 
-            BookClubPointsService sut = new BookClubPointsService(mockMediator.Object, fakeRepo);
+            VideoClubPointsService sut = new VideoClubPointsService(mockMediator.Object, fakeRepo);
 
             await sut.Handle(processedPurchaseOrder);
 
@@ -43,14 +42,14 @@ namespace BookClubService.Tests
         }
 
         [Fact]
-        public async Task BookClubPointsServiceHandlesProcessedPurchasedOrderForNewMembership()
+        public async Task VideoClubPointsServiceHandlesProcessedPurchasedOrderForNewMembership()
         {
             int customerId = 344656;
             AwardedCustomerPoints awardedCustomerPoints = new AwardedCustomerPoints();
             var mockMediator = new Mock<IMediator>();
             mockMediator.Setup(m => m.Send(It.IsAny<AwardCustomerPoints>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(awardedCustomerPoints)
-                .Verifiable("Awarded book club membership points.");
+                .Verifiable("Awarded Video club membership points.");
 
             ProcessedPurchaseOrder processedPurchaseOrder = new ProcessedPurchaseOrder
             {
@@ -72,22 +71,22 @@ namespace BookClubService.Tests
                     },
                     new ItemLineRequest
                     {
-                        Description = "Book Club Membership",
+                        Description = "Video Club Membership",
                         Type = ItemLineType.Membership,
-                        Category = ItemLineCategory.Book
+                        Category = ItemLineCategory.Video
                     },
                     new ItemLineRequest
                     {
-                        Description = "Clean Code",
+                        Description = "Clean Code Video",
                         Type = ItemLineType.Product,
-                        Category = ItemLineCategory.Book
+                        Category = ItemLineCategory.Video
                     }
                 }
             };
 
-            IBookClubMembershipRepository fakeRepo = GetFakeBookClubMembershipRepository(null);
+            IVideoClubMembershipRepository fakeRepo = GetFakeVideoClubMembershipRepository(null);
 
-            BookClubPointsService sut = new BookClubPointsService(mockMediator.Object, fakeRepo);
+            VideoClubPointsService sut = new VideoClubPointsService(mockMediator.Object, fakeRepo);
 
             await sut.Handle(processedPurchaseOrder);
 
@@ -95,14 +94,14 @@ namespace BookClubService.Tests
         }
 
         [Fact]
-        public async Task BookClubPointsServiceHandlesProcessedPurchasedOrderForNoMembership()
+        public async Task VideoClubPointsServiceHandlesProcessedPurchasedOrderForNoMembership()
         {
             int customerId = 344656;
             AwardedCustomerPoints awardedCustomerPoints = new AwardedCustomerPoints();
             var mockMediator = new Mock<IMediator>();
             mockMediator.Setup(m => m.Send(It.IsAny<AwardCustomerPoints>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(awardedCustomerPoints)
-                .Verifiable("Awarded book club membership points.");
+                .Verifiable("Awarded Video club membership points.");
 
             ProcessedPurchaseOrder processedPurchaseOrder = new ProcessedPurchaseOrder
             {
@@ -115,20 +114,20 @@ namespace BookClubService.Tests
                 }
             };
 
-            IBookClubMembershipRepository fakeRepo = GetFakeBookClubMembershipRepository(null);
+            IVideoClubMembershipRepository fakeRepo = GetFakeVideoClubMembershipRepository(null);
 
-            BookClubPointsService sut = new BookClubPointsService(mockMediator.Object, fakeRepo);
+            VideoClubPointsService sut = new VideoClubPointsService(mockMediator.Object, fakeRepo);
 
             await sut.Handle(processedPurchaseOrder);
 
             mockMediator.Verify(m => m.Send(It.IsAny<AwardCustomerPoints>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
-        private IBookClubMembershipRepository GetFakeBookClubMembershipRepository(BookClubMembership bookClubMembership)
+        private IVideoClubMembershipRepository GetFakeVideoClubMembershipRepository(VideoClubMembership VideoClubMembership)
         {
-            IBookClubMembershipRepository repository = new FakeBookClubMembershipRepository();
-            if (bookClubMembership != null)
-                repository.Save(bookClubMembership);
+            IVideoClubMembershipRepository repository = new FakeVideoClubMembershipRepository();
+            if (VideoClubMembership != null)
+                repository.Save(VideoClubMembership);
             return repository;
         }
     }

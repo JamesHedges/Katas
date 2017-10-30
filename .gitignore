@@ -50,5 +50,6 @@ Temporary Items
 packages/
 
 # Exclude build artifacts
+.vs/
 bin/
 obj/

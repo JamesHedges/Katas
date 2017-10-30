@@ -3,10 +3,12 @@ using System.Threading.Tasks;
 using MediatR;
 using OrderService.Core.Messages;
 using DDD.Core.Repository;
+using OrderService.Core;
 
 namespace BookClubService
 {
-    public class BookClubService : IRequestHandler<ActivateMembership, ActivatedMembership>
+    public class BookClubService :
+        INotificationHandler<AcceptingPurchaseOrderItemLine>
     {
         private readonly IMediator _Mediator;
         private readonly IBookClubMembershipRepository _Repository;
@@ -17,16 +19,16 @@ namespace BookClubService
             _Repository = repository;
         }
 
-        public ActivatedMembership Handle(ActivateMembership message)
+        public void Handle(AcceptingPurchaseOrderItemLine message)
         {
-            var membership = _Repository.Get(message.CustomerId);
-            if (membership == null)
+            if (message.Item.Type == ItemLineType.Membership && message.Item.Category == ItemLineCategory.Book)
             {
-                membership = BookClubMembership.Create(message.CustomerId);
+                var membership = _Repository.Get(message.CustomerId);
+                if (membership == null)
+                {
+                    membership = BookClubMembership.Create(message.CustomerId);
+                }
             }
-            return new ActivatedMembership { Activated = true };
         }
-
-
     }
 }
