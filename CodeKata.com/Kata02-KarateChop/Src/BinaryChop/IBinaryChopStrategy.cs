@@ -17,7 +17,7 @@ namespace BinaryChop
             int bottomIndex = 0;
             testIndex = (topIndex - bottomIndex) / 2;
 
-            while (found == -1 && testIndex >= 0 && testIndex < items.Length )
+            while (found == -1 && testIndex >= bottomIndex && testIndex <= topIndex )
             {
                 if (items[testIndex] == searchTarget)
                 {
@@ -26,12 +26,14 @@ namespace BinaryChop
                 else if (searchTarget < items[testIndex])
                 {
                     topIndex = testIndex -1;
-                    testIndex = topIndex >= bottomIndex ? (topIndex - bottomIndex) / 2 : -1;
+                    //testIndex = (topIndex - bottomIndex) / 2;
+                    testIndex = (topIndex + bottomIndex) / 2;
                 }
                 else
                 {
                     bottomIndex = testIndex + 1;
-                    testIndex = bottomIndex <= topIndex ? testIndex + 1 + (topIndex - bottomIndex) / 2 : items.Length;
+                    //testIndex += 1 + (topIndex - bottomIndex) / 2;
+                    testIndex = (topIndex + bottomIndex) / 2;
                 }
             }
 
