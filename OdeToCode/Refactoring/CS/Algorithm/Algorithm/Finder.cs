@@ -1,67 +1,65 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithm
 {
     public class Finder
     {
-        private readonly List<Thing> _p;
+        private readonly List<Person> _people;
 
-        public Finder(List<Thing> p)
+        public Finder(List<Person> person)
         {
-            _p = p;
+            _people = person;
         }
 
-        public F Find(FT ft)
+        public PeopleCompare Find(FurthestClosest furthestClosest)
         {
-            var tr = new List<F>();
+            List<PeopleCompare> peoplePairs = GetPeopleCombinations(_people);
 
-            for(var i = 0; i < _p.Count - 1; i++)
+            return ComparePeople(furthestClosest, peoplePairs);
+        }
+
+        private List<PeopleCompare> GetPeopleCombinations(List<Person> people)
+        {
+            var peoplePairs = new List<PeopleCompare>();
+
+            for (var i = 0; i < people.Count - 1; i++)
             {
-                for(var j = i + 1; j < _p.Count; j++)
+                for (var j = i + 1; j < people.Count; j++)
                 {
-                    var r = new F();
-                    if(_p[i].BirthDate < _p[j].BirthDate)
-                    {
-                        r.P1 = _p[i];
-                        r.P2 = _p[j];
-                    }
-                    else
-                    {
-                        r.P1 = _p[j];
-                        r.P2 = _p[i];
-                    }
-                    r.D = r.P2.BirthDate - r.P1.BirthDate;
-                    tr.Add(r);
+                    peoplePairs.Add(new PeopleCompare(people[i], people[j]));
                 }
             }
+            return peoplePairs;
+        }
 
-            if(tr.Count < 1)
+        private PeopleCompare GetClosestPair(List<PeopleCompare> peoplePairs)
+        {
+            return peoplePairs.OrderBy(pp => pp.BirthdateDifference).FirstOrDefault();
+        }
+
+        private PeopleCompare GetFurthestPair(List<PeopleCompare> peoplePairs)
+        {
+            return peoplePairs.OrderByDescending(pp => pp.BirthdateDifference).FirstOrDefault();
+        }
+
+        private PeopleCompare ComparePeople(FurthestClosest furthersClosest, List<PeopleCompare> peoplePairs)
+        {
+            PeopleCompare answer;
+
+            switch (furthersClosest)
             {
-                return new F();
+                case FurthestClosest.Closest:
+                    answer = GetClosestPair(peoplePairs);
+                    break;
+                case FurthestClosest.Furthest:
+                    answer = GetFurthestPair(peoplePairs);
+                    break;
+                default:
+                    answer = new PeopleCompare();
+                    break;
             }
-
-            F answer = tr[0];
-            foreach(var result in tr)
-            {
-                switch(ft)
-                {
-                    case FT.One:
-                        if(result.D < answer.D)
-                        {
-                            answer = result;
-                        }
-                        break;
-
-                    case FT.Two:
-                        if(result.D > answer.D)
-                        {
-                            answer = result;
-                        }
-                        break;
-                }
-            }
-
-            return answer;
+            return answer ?? new PeopleCompare();
         }
     }
 }
