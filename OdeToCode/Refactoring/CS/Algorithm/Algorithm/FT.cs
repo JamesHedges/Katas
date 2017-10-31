@@ -1,8 +1,8 @@
-﻿namespace Algorithm
-{
-    public enum FurthestClosest
-    {
-        Closest,
-        Furthest
-    }
-}
+﻿//namespace Algorithm
+//{
+//    public enum FurthestClosest
+//    {
+//        Closest,
+//        Furthest
+//    }
+//}

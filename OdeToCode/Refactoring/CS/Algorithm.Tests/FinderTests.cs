@@ -10,9 +10,10 @@ namespace Algorithm.Test
         public void Returns_Empty_Results_When_Given_Empty_List()
         {
             var list = new List<Person>();
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new FurthestBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Closest);
+            var result = finder.Find();
 
             Assert.Null(result.Person1);
             Assert.Null(result.Person2);
@@ -22,9 +23,10 @@ namespace Algorithm.Test
         public void Returns_Empty_Results_When_Given_One_Person()
         {
             var list = new List<Person>() { sue };
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new ClosesBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Closest);
+            var result = finder.Find();
 
             Assert.Null(result.Person1);
             Assert.Null(result.Person2);
@@ -34,9 +36,10 @@ namespace Algorithm.Test
         public void Returns_Closest_Two_For_Two_People()
         {
             var list = new List<Person>() { sue, greg };
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new ClosesBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Closest);
+            var result = finder.Find();
 
             Assert.Same(sue, result.Person1);
             Assert.Same(greg, result.Person2);
@@ -46,9 +49,10 @@ namespace Algorithm.Test
         public void Returns_Furthest_Two_For_Two_People()
         {
             var list = new List<Person>() { greg, mike };
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new FurthestBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Furthest);
+            var result = finder.Find();
 
             Assert.Same(greg, result.Person1);
             Assert.Same(mike, result.Person2);
@@ -58,9 +62,10 @@ namespace Algorithm.Test
         public void Returns_Furthest_Two_For_Four_People()
         {
             var list = new List<Person>() { greg, mike, sarah, sue };
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new FurthestBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Furthest);
+            var result = finder.Find();
 
             Assert.Same(sue, result.Person1);
             Assert.Same(sarah, result.Person2);
@@ -70,9 +75,10 @@ namespace Algorithm.Test
         public void Returns_Closest_Two_For_Four_People()
         {
             var list = new List<Person>() { greg, mike, sarah, sue };
-            var finder = new Finder(list);
+            IPeopleCompareFilter filter = new ClosesBirthdateCompareFilter();
+            var finder = new Finder(list, filter);
 
-            var result = finder.Find(FurthestClosest.Closest);
+            var result = finder.Find();
 
             Assert.Same(sue, result.Person1);
             Assert.Same(greg, result.Person2);

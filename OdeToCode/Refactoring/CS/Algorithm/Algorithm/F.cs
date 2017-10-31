@@ -11,17 +11,17 @@ namespace Algorithm
             BirthdateDifference = TimeSpan.Zero;
         }
 
-        public PeopleCompare(Person first, Person second)
+        public PeopleCompare(Person person1, Person person2)
         {
-            if (first.BirthDate < second.BirthDate)
+            if (person1.BirthDate < person2.BirthDate)
             {
-                Person1 = first;
-                Person2 = second;
+                Person1 = person1;
+                Person2 = person2;
             }
             else
             {
-                Person1 = second;
-                Person2 = first;
+                Person1 = person2;
+                Person2 = person1;
             }
             BirthdateDifference = Person2.BirthDate - Person1.BirthDate;
         }
