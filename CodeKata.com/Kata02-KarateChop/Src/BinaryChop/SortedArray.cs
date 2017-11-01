@@ -29,5 +29,10 @@ namespace BinaryChop
                 yield return sortedArray[i];
             }
         }
+
+        public SortedArray<T> Sub(int beginIndex, int endIndex)
+        {
+            return new SortedArray<T>(sortedArray.Skip(beginIndex).Take(endIndex - beginIndex + 1).ToArray());
+        }
     }
 }
